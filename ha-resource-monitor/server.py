@@ -13,7 +13,6 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
-from concurrent.futures import ThreadPoolExecutor, as_completed
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from typing import Any
@@ -113,14 +112,12 @@ def collect() -> dict[str, Any]:
 
     warnings = []
     components = [normalize("Home Assistant Core", "core", core, "core")]
-    with ThreadPoolExecutor(max_workers=min(2, max(1, len(running)))) as pool:
-        futures = [pool.submit(addon_stats, addon) for addon in running]
-        for future in as_completed(futures):
-            item = future.result()
-            if item:
-                components.append(item)
-            else:
-                warnings.append("Brak odczytu jednej z uruchomionych aplikacji.")
+    for addon in running:
+        item = addon_stats(addon)
+        if item:
+            components.append(item)
+        else:
+            warnings.append("Brak odczytu jednej z uruchomionych aplikacji.")
 
     # Supervisor stats are available on supported HA OS versions. Failure is non-fatal.
     try:

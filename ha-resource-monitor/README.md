@@ -1,4 +1,4 @@
-# Zasoby HA — 1.3.0
+# Zasoby HA — 1.3.1
 
 Wersja 1.3.0 dodaje zatrzymywanie aplikacji i ogranicza koszt odpytywania statystyk. Zawiera również podgląd pamięci wymiany (swap).
 Aktualną instrukcję instalacji z repozytorium i opis pomiarów znajdziesz w [DOCS.md](DOCS.md), a historię zmian w [CHANGELOG.md](CHANGELOG.md).

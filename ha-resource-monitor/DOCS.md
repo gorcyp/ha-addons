@@ -30,7 +30,11 @@ Operacje wymagają wejścia przez Ingress oraz tokenu CSRF. Dostęp do panelu po
 
 ## Oszczędzanie zasobów
 
-Pomiary pobierane są na żądanie. Ukryta karta nie odpytuje serwera. Otwarta domyślnie odświeża co 10 sekund (można ustawić 30 lub 60). Kilka kart współdzieli jeden ostatni pomiar przez 5 sekund. Liczba równoległych odczytów dodatków została ograniczona do dwóch. Brak historii i zależności backendu poza standardową biblioteką Pythona.
+Pomiary pobierane są na żądanie. Ukryta karta nie odpytuje serwera. Otwarta domyślnie odświeża co 10 sekund (można ustawić 30 lub 60). Kilka kart współdzieli jeden ostatni pomiar przez 5 sekund. Od wersji 1.3.1 odczyty dodatków wykonywane są kolejno, bez dodatkowej puli wątków. Przy usługach, które nie odpowiadają, może to wydłużać pomiar. Brak historii i zależności backendu poza standardową biblioteką Pythona.
+
+Kliknij nagłówek tabeli, aby sortować po nazwie, RAM, RAM %, CPU, odebranych lub wysłanych danych. Kolejne kliknięcie odwraca kolejność. Domyślnie RAM malejąco. Wybór utrzymuje się podczas odczytów, do ponownego otwarcia strony.
+
+Po zakończeniu zatrzymywania panel od razu zleca nowy odczyt, bez czekania na interwał. Jeśli odczyt już trwa, zlecenie wykona się zaraz po jego zakończeniu. Czas wykonania operacji przez Supervisor i pobrania pomiarów nadal obowiązuje.
 
 Są to ograniczenia wykonywanej pracy i liczby wątków, a nie gwarancja konkretnego zużycia RAM. Porównaj pamięć aplikacji przed i po aktualizacji w podobnym obciążeniu.
 

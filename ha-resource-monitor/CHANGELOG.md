@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.3.1
+
+- Sortowanie po nazwie, RAM, RAM %, CPU i licznikach sieci przez kliknięcie nagłówka; domyślnie RAM malejąco.
+- Zachowanie sortowania podczas odświeżania pomiarów.
+- Natychmiastowe zlecenie odczytu po zatrzymaniu, również gdy poprzedni odczyt jeszcze trwał.
+- Odrzucanie spóźnionych pomiarów sprzed rozpoczęcia zatrzymywania.
+- Usunięcie puli wątków pomiarowych i modułu concurrent.futures; odczyty wykonywane kolejno.
+
+Przy niedostępnych usługach odczyty sekwencyjne mogą wydłużać pomiar. Oszczędność RAM na Green wymaga sprawdzenia po aktualizacji.
+
 ## 1.3.0
 
 - Zatrzymywanie uruchomionych aplikacji przez Supervisor API, z potwierdzeniem.

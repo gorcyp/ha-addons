@@ -28,12 +28,12 @@
 
     <section class="panel">
       <div class="panel-head">
-        <div><h2>Zużycie zasobów</h2><p>Największe zużycie RAM na górze</p></div>
+        <div><h2>Zużycie zasobów</h2><p>Kliknij nagłówek, aby zmienić sortowanie</p></div>
         <label>Odświeżanie <select id="interval"><option value="5">5 s</option><option value="10" selected>10 s</option><option value="30">30 s</option><option value="60">60 s</option></select></label>
       </div>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Komponent</th><th>RAM</th><th>RAM %¹</th><th>CPU</th><th>Odebrano / wysłano²</th><th>Akcja</th></tr></thead>
+          <thead><tr><th aria-sort="none"><button data-sort="name" data-label="Komponent">Komponent</button></th><th aria-sort="descending"><button data-sort="memory_usage" data-label="RAM">RAM ↓</button></th><th aria-sort="none"><button data-sort="memory_percent" data-label="RAM %¹">RAM %¹</button></th><th aria-sort="none"><button data-sort="cpu_percent" data-label="CPU">CPU</button></th><th aria-sort="none"><button data-sort="network_rx" data-label="Odebrano²">Odebrano²</button> / <button data-sort="network_tx" data-label="Wysłano²">Wysłano²</button></th><th>Akcja</th></tr></thead>
           <tbody id="rows"><tr><td colspan="5" class="empty">Pobieranie danych…</td></tr></tbody>
         </table>
       </div>
