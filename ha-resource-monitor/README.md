@@ -1,4 +1,8 @@
-# Zasoby HA — 1.1.0
+# Zasoby HA — 1.3.0
+
+Wersja 1.3.0 dodaje zatrzymywanie aplikacji i ogranicza koszt odpytywania statystyk. Zawiera również podgląd pamięci wymiany (swap).
+Aktualną instrukcję instalacji z repozytorium i opis pomiarów znajdziesz w [DOCS.md](DOCS.md), a historię zmian w [CHANGELOG.md](CHANGELOG.md).
+Poniższa instrukcja dotyczy wyłącznie starszego sposobu instalacji lokalnej.
 
 Panel RAM i CPU dla Home Assistant Core, Supervisora i uruchomionych aplikacji.
 Ciemne, płaskie karty nawiązują do standardowego motywu HA. Bez zewnętrznych fontów, bibliotek i historii pomiarów.

@@ -22,19 +22,24 @@
       <article><span>Uruchomione aplikacje</span><strong id="addons">—</strong><small id="coverage">Oczekiwanie na pomiar</small></article>
     </section>
 
+    <section class="cards" aria-label="Pamięć wymiany">
+      <article><span>Pamięć wymiany (swap)</span><strong id="swapUsed">—</strong><small id="swapInfo">Oczekiwanie na pomiar</small></article>
+    </section>
+
     <section class="panel">
       <div class="panel-head">
         <div><h2>Zużycie zasobów</h2><p>Największe zużycie RAM na górze</p></div>
-        <label>Odświeżanie <select id="interval"><option value="3">3 s</option><option value="5" selected>5 s</option><option value="10">10 s</option><option value="30">30 s</option></select></label>
+        <label>Odświeżanie <select id="interval"><option value="5">5 s</option><option value="10" selected>10 s</option><option value="30">30 s</option><option value="60">60 s</option></select></label>
       </div>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Komponent</th><th>RAM</th><th>RAM %¹</th><th>CPU</th><th>Odebrano / wysłano²</th></tr></thead>
+          <thead><tr><th>Komponent</th><th>RAM</th><th>RAM %¹</th><th>CPU</th><th>Odebrano / wysłano²</th><th>Akcja</th></tr></thead>
           <tbody id="rows"><tr><td colspan="5" class="empty">Pobieranie danych…</td></tr></tbody>
         </table>
       </div>
       <details class="note"><summary>Jak czytać te dane?</summary><p>Suma RAM obejmuje wyłącznie pozycje w tabeli, nie całe urządzenie. Nie uwzględnia wszystkich usług systemowych i pamięci podręcznej Linuksa. Integracje działające w Core nie mają osobnych pomiarów.</p><p>¹ RAM % pochodzi z Supervisora i odnosi się do limitu pamięci kontenera, nie sumy tabeli. Suma CPU nie jest pomiarem całego hosta i może przekraczać 100% na procesorze wielordzeniowym.</p><p>² Liczniki przesłanych danych, nie bieżąca prędkość transferu.</p></details>
     </section>
+    <details class="note"><summary>Co oznacza zużycie swapu?</summary><p>Swap służy do przechowywania stron pamięci poza zwykłą pamięcią roboczą. Pokazujemy sumę aktywnego swapu widoczną dla jądra systemu, nie swap pojedynczej aplikacji. Może obejmować również zram, czyli skompresowaną pamięć w RAM.</p><p>Samo zajęcie swapu nie oznacza awarii ani bieżącego spowolnienia. Ten pomiar nie pokazuje tempa wymiany stron. Wartości swapu i sumy RAM aplikacji nie należy dodawać jako „całego zużycia RAM”. Panel nie zmienia ustawień swapu.</p></details>
     <div id="error" class="error" hidden></div>
   </main>
   <script src="app.js"></script>
